@@ -141,7 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
     revealObserver.observe(element);
   });
 
-  // --- 7. Contact Form Simulation Notification ---
+  // --- 7. Contact Form Handling (via FormSubmit) ---
   if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
@@ -149,22 +149,50 @@ document.addEventListener('DOMContentLoaded', () => {
       const submitBtn = contactForm.querySelector('button[type="submit"]');
       const originalText = submitBtn.textContent;
       
-      // Simulate sending status
+      // Update UI for sending state
       submitBtn.textContent = 'Sending Message...';
       submitBtn.style.opacity = '0.7';
       submitBtn.disabled = true;
 
-      // Simulate completion delay
-      setTimeout(() => {
-        // Aesthetic checkmark notification
-        submitBtn.textContent = 'Message Sent! ✓';
-        submitBtn.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
-        submitBtn.style.borderColor = '#10b981';
-        submitBtn.style.boxShadow = '0 4px 20px rgba(16, 185, 129, 0.4)';
-        
-        contactForm.reset();
+      // Extract form values
+      const name = document.getElementById('form-name').value;
+      const email = document.getElementById('form-email').value;
+      const message = document.getElementById('form-msg').value;
 
-        // Restore button state after 3 seconds
+      // Send request to FormSubmit AJAX endpoint
+      fetch('https://formsubmit.co/ajax/saptakturja2018@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          name: name,
+          email: email,
+          message: message
+        })
+      })
+      .then(response => {
+        if (response.ok) {
+          // Success notification
+          submitBtn.textContent = 'Message Sent! ✓';
+          submitBtn.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
+          submitBtn.style.borderColor = '#10b981';
+          submitBtn.style.boxShadow = '0 4px 20px rgba(16, 185, 129, 0.4)';
+          contactForm.reset();
+        } else {
+          throw new Error('Form submission failed.');
+        }
+      })
+      .catch(error => {
+        // Error notification
+        submitBtn.textContent = 'Error Sending ✗';
+        submitBtn.style.background = 'linear-gradient(135deg, #ef4444 0%, #dc2626 100%)';
+        submitBtn.style.borderColor = '#ef4444';
+        submitBtn.style.boxShadow = '0 4px 20px rgba(239, 68, 68, 0.4)';
+      })
+      .finally(() => {
+        // Restore button state after 3.5 seconds
         setTimeout(() => {
           submitBtn.textContent = originalText;
           submitBtn.style.background = '';
@@ -173,7 +201,7 @@ document.addEventListener('DOMContentLoaded', () => {
           submitBtn.style.opacity = '1';
           submitBtn.disabled = false;
         }, 3500);
-      }, 1500);
+      });
     });
   }
 });

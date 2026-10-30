@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -104,28 +104,14 @@
           </div>
         </div>
 
-        <div class="relative flex items-center justify-center p-8">
-          <!-- Glowing ambient aura backdrop -->
-          <div
-            class="absolute w-56 h-56 bg-gradient-to-tr from-indigo-500/30 via-purple-500/20 to-pink-500/30 rounded-full blur-2xl animate-pulse pointer-events-none"
-          ></div>
-
-          <!-- Main Container -->
-          <div class="hero-art relative flex items-center justify-center">
-            <div class="orb-canvas"></div>
-            <div class="orb-avatar-container relative group">
-              <!-- Gradient Border Ring Wrapper -->
-              <div
-                class="p-1 rounded-full bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 shadow-2xl hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer"
-              >
-                <!-- Profile Image -->
-                <img
-                  class="orb-avatar w-40 h-40 rounded-full object-cover object-[center_20%] border-4 border-white block shadow-inner"
-                  src="assets/profile_pic.png"
-                  alt="Saptak portrait"
-                />
-              </div>
-            </div>
+        <!-- Hero Visual: Clean Avatar -->
+        <div class="hero-visual">
+          <div class="hv-avatar-wrap">
+            <img
+              class="hv-avatar"
+              src="assets/profile_pic.png"
+              alt="Saptak portrait"
+            />
           </div>
         </div>
       </div>

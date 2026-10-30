@@ -335,76 +335,105 @@
         and solutions built.
       </p>
 
-      <div class="projects-grid" style="display: flex; justify-content: center">
-        <!-- SuperShop - Featured Project Card -->
-        <article
-          class="project-card glass"
-          style="max-width: 650px; width: 100%"
-        >
-          <div class="project-banner">
-            <div class="project-pattern"></div>
-            <div class="project-icon-wrapper" style="color: var(--accent-blue)">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="32"
-                height="32"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <rect x="3" y="5" width="18" height="14" rx="2" />
-                <circle cx="9" cy="10" r="2" />
-                <path d="m21 15-5.5-5.5a2 2 0 0 0-2.8 0L7 15" />
-              </svg>
+      <div class="projects-grid-featured">
+        <!-- SuperShop - Featured Project Card (wide) -->
+        <article class="project-card-featured glass" id="project-supershop">
+
+          <!-- Left: Info Panel -->
+          <div class="pf-info">
+            <div class="pf-header">
+              <div class="pf-icon-badge">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" x2="21" y1="6" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
+                </svg>
+              </div>
+              <div>
+                <p class="pf-label">Featured Project</p>
+                <h3 class="pf-title">SuperShop</h3>
+              </div>
             </div>
-          </div>
-          <div class="project-body">
-            <div class="project-tags">
-              <span class="project-tag">AdonisJS</span>
-              <span class="project-tag">React</span>
-              <span class="project-tag">FEFO</span>
-              <span class="project-tag">MySQL</span>
-              <span class="project-tag">POS</span>
-            </div>
-            <h3 class="project-title">SuperShop</h3>
-            <p class="project-desc">
-              A production-ready multi-tenant super shop inventory and
-              expiration management system built with a clean architecture. It
-              includes FEFO-based stock allocation, atomic POS checkout, batch
-              tracking, inventory and expiration monitoring, product management,
-              dashboard analytics, and a transactional outbox pattern for
-              reliable event-driven processing under concurrency.
+
+            <p class="pf-desc">
+              A production-ready <strong>multi-tenant</strong> inventory &amp; expiration management system.
+              Implements FEFO-based stock allocation, atomic POS checkout, batch tracking, and a
+              transactional outbox pattern for reliable event-driven processing under high concurrency.
             </p>
-            <div class="project-links">
+
+            <ul class="pf-features">
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                FEFO stock allocation algorithm
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Atomic POS checkout &amp; deadlock prevention
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Transactional outbox (event-driven)
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Dashboard analytics &amp; expiry monitoring
+              </li>
+            </ul>
+
+            <div class="pf-tags">
+              <span class="pf-tag pf-tag--blue">AdonisJS</span>
+              <span class="pf-tag pf-tag--purple">React</span>
+              <span class="pf-tag pf-tag--teal">MySQL</span>
+              <span class="pf-tag pf-tag--amber">FEFO</span>
+              <span class="pf-tag pf-tag--rose">POS</span>
+            </div>
+
+            <div class="pf-actions">
               <a
                 href="https://github.com/Saptak3315/SuperShop"
-                class="btn btn-secondary"
+                class="pf-btn pf-btn--primary"
                 target="_blank"
                 rel="noopener noreferrer"
+                id="supershop-github-btn"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path
-                    d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"
-                  />
-                  <path d="M9 18c-4.51 2-5-2-7-2" />
+                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/>
                 </svg>
                 View Repository
               </a>
             </div>
           </div>
+
+          <!-- Right: Screenshot Panel -->
+          <div class="pf-preview">
+            <!-- Tab switcher -->
+            <div class="pf-tabs" role="tablist" aria-label="SuperShop screenshots">
+              <button class="pf-tab active" id="tab-pos" role="tab" aria-selected="true" aria-controls="screenshot-pos" data-target="screenshot-pos">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18"/></svg>
+                POS Checkout
+              </button>
+              <button class="pf-tab" id="tab-login" role="tab" aria-selected="false" aria-controls="screenshot-login" data-target="screenshot-login">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                Login Screen
+              </button>
+            </div>
+
+            <!-- Browser mockup -->
+            <div class="pf-browser">
+              <div class="pf-browser-bar">
+                <span class="pf-dot pf-dot--red"></span>
+                <span class="pf-dot pf-dot--yellow"></span>
+                <span class="pf-dot pf-dot--green"></span>
+                <div class="pf-url-bar">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                  supershop.local
+                </div>
+              </div>
+              <div class="pf-screen">
+                <img id="screenshot-pos" class="pf-screenshot active" src="assets/pos.png" alt="SuperShop POS Checkout screen" loading="lazy" />
+                <img id="screenshot-login" class="pf-screenshot" src="assets/login.png" alt="SuperShop Login screen" loading="lazy" />
+              </div>
+            </div>
+          </div>
+
         </article>
       </div>
     </section>

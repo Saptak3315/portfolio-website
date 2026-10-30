@@ -204,4 +204,30 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+
+  // --- 8. Project Screenshot Tab Switcher ---
+  const pfTabs = document.querySelectorAll('.pf-tab');
+  pfTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const targetId = tab.dataset.target;
+
+      // Update tab active states
+      pfTabs.forEach(t => {
+        t.classList.remove('active');
+        t.setAttribute('aria-selected', 'false');
+      });
+      tab.classList.add('active');
+      tab.setAttribute('aria-selected', 'true');
+
+      // Swap screenshot
+      const screenshots = document.querySelectorAll('.pf-screenshot');
+      screenshots.forEach(img => {
+        if (img.id === targetId) {
+          img.classList.add('active');
+        } else {
+          img.classList.remove('active');
+        }
+      });
+    });
+  });
 });
